@@ -1,14 +1,14 @@
 package main
 
 import (
+	"fmt"
 	"github.com/rivo/tview"
-    "fmt"
 )
 
 func main() {
 	app := tview.NewApplication()
 	form := tview.NewForm().
-	    AddDropDown("Start Search from The Year \n",  []string{"2017", "2018", "2019", "2020", "2021", "2022"}, 0, nil).
+		AddDropDown("Start Search from The Year \n", []string{"2017", "2018", "2019", "2020", "2021", "2022"}, 0, nil).
 		AddDropDown("Search from The Month", []string{"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"}, 0, nil).
 		AddDropDown("Search from The Day of the Month", []string{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"}, 0, nil).
 		AddDropDown("Search From The Add Hour", []string{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24"}, 0, nil).
@@ -16,7 +16,7 @@ func main() {
 		AddDropDown(" Search Till The Month", []string{"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"}, 0, nil).
 		AddDropDown("Search Till The Day of the Month", []string{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"}, 0, nil).
 		AddDropDown("Search Till The Add Hour", []string{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24"}, 0, nil).
-	//	AddButton("Save", nil).
+		//	AddButton("Save", nil).
 		AddButton("Save", func() {
 			app.Stop()
 		})
@@ -25,9 +25,9 @@ func main() {
 		panic(err)
 	}
 	_, a := form.GetFormItem(0).(*tview.DropDown).GetCurrentOption()
-    //fmt.Printf(b)
+	//fmt.Printf(b)
 	_, b := form.GetFormItem(1).(*tview.DropDown).GetCurrentOption()
-	var k,l int
+	var k, l int
 	switch {
 	case b == "January":
 		k = 01
@@ -42,7 +42,7 @@ func main() {
 	case b == "June":
 		k = 6
 	case b == "July":
-		k = 7 
+		k = 7
 	case b == "August":
 		k = 8
 	case b == "September":
@@ -55,20 +55,19 @@ func main() {
 		k = 12
 	}
 
-
 	_, c := form.GetFormItem(2).(*tview.DropDown).GetCurrentOption()
-    //fmt.Printf(c)
-	
+	//fmt.Printf(c)
+
 	_, d := form.GetFormItem(3).(*tview.DropDown).GetCurrentOption()
-    //fmt.Printf(d)
+	//fmt.Printf(d)
 
 	_, e := form.GetFormItem(4).(*tview.DropDown).GetCurrentOption()
-    //fmt.Printf(e)
+	//fmt.Printf(e)
 
 	_, f := form.GetFormItem(5).(*tview.DropDown).GetCurrentOption()
-    //fmt.Printf(f)
-	 
-		switch {
+	//fmt.Printf(f)
+
+	switch {
 	case f == "January":
 		l = 1
 	case f == "February":
@@ -82,7 +81,7 @@ func main() {
 	case f == "June":
 		l = 6
 	case f == "July":
-		l = 7 
+		l = 7
 	case f == "August":
 		l = 8
 		l = 9
@@ -96,14 +95,8 @@ func main() {
 
 	_, g := form.GetFormItem(6).(*tview.DropDown).GetCurrentOption()
 	_, h := form.GetFormItem(6).(*tview.DropDown).GetCurrentOption()
-    //fmt.Printf(g)
+	//fmt.Printf(g)
 
-	fmt.Println(a,"-",k,"-",c,"-",d,"to",e,"-",l,"-",g,"-", h)
+	fmt.Println(a, "-", k, "-", c, "-", d, "to", e, "-", l, "-", g, "-", h)
 
 }
-
-
-
-
-
-
