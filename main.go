@@ -21,7 +21,7 @@ func main() {
 			app.Stop()
 		})
 	form.SetBorder(true).SetTitle("Enter Date to Search").SetTitleAlign(tview.AlignLeft)
-	if err := app.SetRoot(form, true).SetFocus(form).Run(); err != nil {
+	if err := app.SetRoot(form, true).SetFocus(form).EnableMouse(true).Run(); err != nil {
 		panic(err)
 	}
 	_, a := form.GetFormItem(0).(*tview.DropDown).GetCurrentOption()
